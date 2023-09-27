@@ -1,0 +1,40 @@
+.display {
+    font-family: var(--font-display);
+    font-weight: var(--font-display-weight);
+    text-transform: uppercase;
+}
+
+body {
+    /* background-color: black; */
+    padding: 0;
+    margin: auto;
+    align-items: center;
+    font-family: var(--font-body)
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-heading-weight);
+    font-size: var(--font-size-h1);
+
+    &.display {
+        font-size: calc(var(--font-size-h1) * var(--font-size-display));
+    }
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-heading-weight);
+    font-size: var(--font-size-h1);
+
+    &.display {
+        font-size: var(--font-size-h1);
+    }
+}
+
+p.phonelabel {
+    margin: 0;
+    padding-left: 5px;
+    display: inline;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,382 @@
+/* search for "help!" to see the places where I have questions please! */
+/* "to-do" for reminders */
+
+body {
+    position: relative;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    border-bottom: 2px solid white;
+
+    & .headertop {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        margin: var(--sp-s) 0;
+        position: relative;
+
+        & .right {
+            display: flex;
+            align-self: flex-start;
+            position: absolute;
+            right: 0;
+
+            .phone {
+                display: flex;
+                align-items: center;
+                font-weight: 300;
+                /* to-do: add more weights to the font options */
+                color: white;
+            }
+
+            & strong {
+                padding-top: 2px;
+            }
+        }
+    }
+
+    .headerlinks {
+        width: 80%;
+
+        & ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+
+            & li {
+                margin-bottom: 10px;
+
+                & a {
+                    padding: 2px 2px;
+                    text-decoration: none;
+                    font-family: var(--font-heading);
+                    font-size: var(--font-size-h5);
+                    color: white;
+                }
+
+                & a:hover {
+                    border-bottom: 2px solid var(--brand2);
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    @media only screen and (max-width: 1140px) {
+        .headertop {
+            width: 90%;
+            justify-content: start;
+        }
+
+        .logo {
+            max-width: 40%;
+            min-width: 200px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            padding-left: var(--sp-s-tab);
+
+            .bar1,
+            .bar2,
+            .bar3 {
+                background-color: var(--brand2);
+                height: 4px;
+                width: 36px;
+                margin: 4px;
+                border-radius: 10px;
+            }
+        }
+
+        .headerlinks {
+            display: none;
+        }
+
+        .header img {
+            max-width: 200px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .headertop {
+            justify-content: start;
+            margin: var(--sp-s-tab)
+        }
+
+        .right {
+            .phone {
+                display: none !important;
+                /* help! I can't figure out why I need to use !important to make it disappear. When resizing the window it disappears currently, but if using dev tools set to responsive it doesn't*/
+            }
+
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        header {
+            position: fixed;
+
+            .headertop {
+                margin: var(--sp-s-mob)
+            }
+        }
+    }
+}
+
+.banner {
+    position: relative;
+
+    & .bannerimage {
+        display: flex;
+        justify-content: center;
+        background-image: url("images/Dr\ Dona.png");
+        background-size: 100;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-color: #171718;
+        position: relative;
+        top: -152px;
+        height: 700px;
+        z-index: -1;
+    }
+
+    & .container {
+        position: absolute;
+        bottom: 160px;
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        & .cta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 80%;
+            margin-bottom: 40px;
+
+            & img {
+                max-height: 166px;
+            }
+
+            & h1 {
+                display: inline-block;
+                margin: var(--sp-xs) 0;
+                color: white;
+                font-size: 4rem;
+                text-transform: uppercase;
+
+                & span {
+                    font-size: 3rem;
+                }
+            }
+
+            & h2 {
+                display: inline-block;
+                font-size: 3rem;
+                color: var(--brand2);
+                margin: 0;
+                text-transform: capitalize;
+            }
+
+            & p {
+                color: var(--t-body-inv);
+            }
+
+            & .enquire {
+                background-color: var(--brand2);
+            }
+
+        }
+    }
+
+    @media only screen and (max-width: 1140px) {
+        & .bannerimage {
+            height: 550px;
+            background-size: 95%;
+            /* background-position: bottom right; */
+        }
+
+        & .container {
+            & .cta {
+                width: 90%;
+                margin-bottom: 40px;
+
+                & img {
+                    max-height: 100px;
+                }
+
+                & h1 {
+                    margin: var(--sp-xs) 0;
+                    font-size: 3rem;
+
+                    & span {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                & h2 {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+
+
+
+
+    @media only screen and (max-width: 768px) {
+        & .bannerimage {
+            height: 400px;
+            background-position: bottom right;
+        }
+        & .container {
+            top: -50px;
+
+            & .cta {
+                width: 90%;
+                margin-bottom: 40px;
+
+                & img {
+                    display: none;
+                }
+
+                & h1 {
+                    display: none;
+                }
+
+                & h2 {
+                    font-size: 1.5rem;
+                }
+
+                & p {
+                    font-size: 0.8rem;
+                    max-width: 225px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        & .bannerimage {
+            background-size: 130%;
+            height: 500px;
+        }
+        & .container {
+            top: -200px;
+
+            & .cta {
+                width: 90%;
+                margin-bottom: 40px;
+
+                & img {
+                    display: none;
+                }
+
+                & h1 {
+                    display: none;
+                }
+
+                & h2 {
+                    font-size: 1.5rem;
+                }
+
+                & p {
+                    font-size: 0.8rem;
+                    max-width: 225px;
+                }
+            }
+        }
+    }
+}
+
+button {
+    border-radius: var(--radius-button);
+    border: 0;
+    padding: var(--sp-xs) var(--sp-m);
+    font-size: var(--font-size-h5);
+
+    @media only screen and (max-width: 1140px) {
+        /* font-size: var(--font-size-h5); */
+        font-size: 16px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        padding: var(--sp-xs-mob) var(--sp-m-mob);
+        /* font-size: var(--font-size-h5); */
+        font-size: 14px;
+    }
+    @media only screen and (max-width: 576px) {
+        padding: var(--sp-xs-mob) var(--sp-s-mob);
+        /* font-size: var(--font-size-h5); */
+        font-size: 12px;
+    }
+}
+
+
+
+
+/* -------------------------------ANIMATIONS------------------------------- */
+.menuanim1 {
+    animation: topbar 1s;
+    animation-fill-mode: forwards;
+}
+
+.menuanim2 {
+    animation: middlebar 1s;
+    animation-fill-mode: forwards;
+}
+
+.menuanim3 {
+    animation: bottombar 1s;
+    animation-fill-mode: forwards;
+}
+
+/* .openmobilemenu {
+        transform: translateX(-100px);
+        transition: all 0.3s;
+    } */
+
+@keyframes middlebar {
+    from {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+@keyframes topbar {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(45deg) translate(4px, 12.5px);
+    }
+}
+
+@keyframes bottombar {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-45deg) translate(4px, -12.5px);
+    }
+}
