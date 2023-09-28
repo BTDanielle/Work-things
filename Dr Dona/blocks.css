@@ -136,7 +136,8 @@ header {
 
 .banner {
     position: relative;
-    top: 0;
+    top: -152px;
+    z-index: -1;
 
     & .bannerimage {
         display: flex;
@@ -147,14 +148,14 @@ header {
         background-position: bottom;
         background-color: #171718;
         position: relative;
-        top: -152px;
+        /* top: -152px; */
         height: 700px;
-        z-index: -1;
+        
     }
 
     & .container {
         position: absolute;
-        bottom: 160px;
+        bottom: 0;
         z-index: 3;
         width: 100%;
         display: flex;
@@ -245,7 +246,7 @@ header {
         }
 
         & .container {
-            top: -50px;
+            bottom: 0;
 
             & .cta {
                 width: 90%;
@@ -278,7 +279,7 @@ header {
         }
 
         & .container {
-            top: -150px;
+            top: -0px;
 
             & .cta {
                 width: 90%;
