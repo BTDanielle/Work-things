@@ -136,6 +136,7 @@ header {
 
 .banner {
     position: relative;
+    top: 0;
 
     & .bannerimage {
         display: flex;
@@ -242,6 +243,7 @@ header {
             height: 400px;
             background-position: bottom right;
         }
+
         & .container {
             top: -50px;
 
@@ -274,8 +276,9 @@ header {
             background-size: 130%;
             height: 500px;
         }
+
         & .container {
-            top: -200px;
+            top: -150px;
 
             & .cta {
                 width: 90%;
@@ -302,6 +305,197 @@ header {
     }
 }
 
+.ebook-banner {
+    padding: var(--sp-s) 0;
+    position: relative;
+    height: stretch;
+    background-repeat: no-repeat;
+    background-color: var(--brand2);
+    display: flex;
+    gap: var(--sp-s);
+    justify-content: center;
+    overflow: hidden;
+
+    & .background {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 10%;
+        filter: blur(2px);
+    }
+
+    & .covers {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        align-content: start;
+        width: 20%;
+        order: 0;
+
+        & .cover1 {
+            position: absolute;
+            min-height: 200px;
+            max-height: 90%;
+            max-width: 90%;
+            z-index: 1;
+            transform: rotate(-1deg);
+        }
+
+        & .cover2 {
+            position: absolute;
+            left: -30%;
+            min-height: 200px;
+            max-height: 90%;
+            max-width: 90%;
+            z-index: 0;
+            transform: rotate(-5deg);
+        }
+    }
+
+    & .ebook-cta {
+        width: 60%;
+        order: 1;
+
+        & h2 {
+            color: var(--t-body-inv);
+            margin-top: 0;
+        }
+
+        & h3 {
+            margin: 0;
+            color: var(--t-body-inv);
+        }
+
+        & ul {
+            color: var(--t-body-inv);
+
+            & li::marker {
+                content: "-  ";
+            }
+        }
+
+        .keyline {
+            height: 1px;
+            background-color: var(--t-body-inv);
+            margin-bottom: 16px;
+        }
+    }
+
+    @media only screen and (max-width: 1040px) {
+
+        & .background {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 830px) {
+        flex-direction: column;
+
+        & .ebook-cta {
+            position: relative;
+            width: 90%;
+            margin: auto;
+        }
+
+        & .covers {
+            height: 250px;
+            position: relative;
+            width: 20%;
+            margin: auto;
+            justify-content: center;
+
+            & .cover1 {
+                max-width: none;
+                left: 5%;
+            }
+
+            & .cover2 {
+                max-width: none;
+                right: -5%;
+            }
+
+            @media only screen and (max-width: 576px) {}
+        }
+    }
+}
+
+.services {
+    display: grid;
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    gap: var(--sp-m);
+    margin-top: var(--sp-m);
+
+    & .service-card {
+        display: flex;
+        flex-direction: column;
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--sp-s) 0;
+            gap: var(--sp-s);
+
+            & img {
+                width: 100%;
+                display: inline;
+                order: 0;
+            }
+
+            & h2.display {
+                font-size: 3em;
+                margin: 0;
+                display: inline;
+                order: 1;
+            }
+        }
+
+        & div.keyline {
+            height: 1px;
+            background-color: var(--brand1);
+        }
+
+        & p {
+            color: var(--brand2);
+        }
+    }
+
+    @media only screen and (max-width: 1140px) {
+        width: 90%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 576px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.galleryblock {
+    background-color: var(--brand3);
+    padding-bottom: 40px;
+    & .gallerycta {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & .display {
+            color: var(--t-body-inv);
+            margin-bottom: 0;
+        }
+        & p {
+            color: var(--t-body-inv);
+            text-align: center;
+        }
+    }
+}
+
 button {
     border-radius: var(--radius-button);
     border: 0;
@@ -318,10 +512,40 @@ button {
         /* font-size: var(--font-size-h5); */
         font-size: 14px;
     }
+
     @media only screen and (max-width: 576px) {
         padding: var(--sp-xs-mob) var(--sp-s-mob);
         /* font-size: var(--font-size-h5); */
         font-size: 12px;
+    }
+}
+
+button.light {
+    background-color: var(--t-body-inv);
+    color: var(--brand2);
+    border: solid 2px var(--brand2);
+}
+
+.full-bleed-image {
+    display: flex;
+    width: 100vw;
+    height: 600px;
+
+    & img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @media only screen and (max-width: 1140px) {
+        height: 500px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        height: 350px;
+    }
+
+    @media only screen and (max-width: 576px) {
+        height: 300px;
     }
 }
 
